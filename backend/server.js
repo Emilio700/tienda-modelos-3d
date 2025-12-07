@@ -11,11 +11,28 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'demo-secret-key-for-3d-models-store-123';
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+
+// Configurar CORS para permitir tanto localhost como Vercel
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://tienda-modelos-3d.vercel.app',
+  'https://tienda-modelos-3d-git-master-emilio700.vercel.app',
+  process.env.FRONTEND_URL
+].filter(Boolean);
 
 // Middleware
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: function (origin, callback) {
+    // Permitir requests sin origin (como mobile apps o curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || origin.includes('vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
