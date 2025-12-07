@@ -258,7 +258,7 @@ app.get('/api/health', (req, res) => {
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-  console.log(`📡 CORS habilitado para: ${FRONTEND_URL}`);
+  console.log(`📡 CORS habilitado para: ${process.env.FRONTEND_URL || 'origenes permitidos configurados'}`);
   console.log(`🔐 Usuarios de prueba disponibles:`);
   console.log(`   - user1@demo.com / pass123`);
   console.log(`   - user2@demo.com / pass123`);
