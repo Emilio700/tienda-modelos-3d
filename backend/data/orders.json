@@ -1,0 +1,455 @@
+[
+  {
+    "items": [
+      {
+        "id": "3",
+        "name": "Catedral Gótica",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura y Edificios",
+        "shortDescription": "Arquitectura detallada de catedral medieval",
+        "longDescription": "Impresionante modelo de catedral gótica con arbotantes, patrones de vitrales y detalles complejos de mampostería. Se puede imprimir como un todo o en secciones. Perfecto para entusiastas de la arquitectura, terrenos de wargaming o propósitos educativos.",
+        "price": 89.99,
+        "images": [
+          "/src/assets/products/cathedral_stl_2.png",
+          "/src/assets/products/cathedral_stl_1764920966827.png"
+        ],
+        "fileFormat": "STL",
+        "polygonCount": 320000,
+        "printTime": "24-28 horas",
+        "fileSize": "150 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 156,
+        "quantity": 1
+      }
+    ],
+    "total": 254.3884,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764981460067",
+    "date": "2025-12-06T00:37:40.067Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      }
+    ],
+    "total": 217.86,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764981639186",
+    "date": "2025-12-06T00:40:39.186Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      },
+      {
+        "id": "3",
+        "name": "Catedral Gótica",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura y Edificios",
+        "shortDescription": "Arquitectura detallada de catedral medieval",
+        "longDescription": "Impresionante modelo de catedral gótica con arbotantes, patrones de vitrales y detalles complejos de mampostería. Se puede imprimir como un todo o en secciones. Perfecto para entusiastas de la arquitectura, terrenos de wargaming o propósitos educativos.",
+        "price": 89.99,
+        "images": [
+          "/src/assets/products/cathedral_stl_2.png",
+          "/src/assets/products/cathedral_stl_1764920966827.png"
+        ],
+        "fileFormat": "STL",
+        "polygonCount": 320000,
+        "printTime": "24-28 horas",
+        "fileSize": "150 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 156,
+        "quantity": 11
+      },
+      {
+        "id": "10",
+        "name": "Dragón Articulado",
+        "manufacturer": "3D Innovators",
+        "category": "Personajes y Miniaturas",
+        "shortDescription": "Dragón completamente articulado y posable",
+        "longDescription": "¡Increíble dragón articulado que se imprime completamente ensamblado! Presenta articulaciones móviles en alas, patas, cola y cuello. No se requiere montaje ni soportes. Este modelo de impresión en el lugar muestra las capacidades de la impresión 3D moderna. Horas de diversión de pose garantizadas.",
+        "price": 78.99,
+        "images": [
+          "/src/assets/products/dragonarticulado2.jpg",
+          "/src/assets/products/dragonarticulado1.jpg"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 125000,
+        "printTime": "10-12 horas",
+        "fileSize": "68 MB",
+        "featured": true,
+        "rating": 4.9,
+        "reviews": 412,
+        "quantity": 1
+      }
+    ],
+    "total": 1307.7607999999998,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764981684626",
+    "date": "2025-12-06T00:41:24.626Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      }
+    ],
+    "total": 217.86,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764981727667",
+    "date": "2025-12-06T00:42:07.667Z"
+  },
+  {
+    "items": [
+      {
+        "id": "3",
+        "name": "Catedral Gótica",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura y Edificios",
+        "shortDescription": "Arquitectura detallada de catedral medieval",
+        "longDescription": "Impresionante modelo de catedral gótica con arbotantes, patrones de vitrales y detalles complejos de mampostería. Se puede imprimir como un todo o en secciones. Perfecto para entusiastas de la arquitectura, terrenos de wargaming o propósitos educativos.",
+        "price": 89.99,
+        "images": [
+          "/src/assets/products/cathedral_stl_2.png",
+          "/src/assets/products/cathedral_stl_1764920966827.png"
+        ],
+        "fileFormat": "STL",
+        "polygonCount": 320000,
+        "printTime": "24-28 horas",
+        "fileSize": "150 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 156,
+        "quantity": 1
+      }
+    ],
+    "total": 254.3884,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764981985766",
+    "date": "2025-12-06T00:46:25.766Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      }
+    ],
+    "total": 217.86,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764982217052",
+    "date": "2025-12-06T00:50:17.052Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      }
+    ],
+    "total": 217.86,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764982274305",
+    "date": "2025-12-06T00:51:14.306Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      },
+      {
+        "id": "3",
+        "name": "Catedral Gótica",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura y Edificios",
+        "shortDescription": "Arquitectura detallada de catedral medieval",
+        "longDescription": "Impresionante modelo de catedral gótica con arbotantes, patrones de vitrales y detalles complejos de mampostería. Se puede imprimir como un todo o en secciones. Perfecto para entusiastas de la arquitectura, terrenos de wargaming o propósitos educativos.",
+        "price": 89.99,
+        "images": [
+          "/src/assets/products/cathedral_stl_2.png",
+          "/src/assets/products/cathedral_stl_1764920966827.png"
+        ],
+        "fileFormat": "STL",
+        "polygonCount": 320000,
+        "printTime": "24-28 horas",
+        "fileSize": "150 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 156,
+        "quantity": 1
+      }
+    ],
+    "total": 322.2484,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764982433061",
+    "date": "2025-12-06T00:53:53.061Z"
+  },
+  {
+    "items": [
+      {
+        "id": "13",
+        "name": "Arte Geométrico de Pared",
+        "manufacturer": "PrintLab 3D",
+        "category": "Arte y Decoración",
+        "shortDescription": "Paneles de decoración de pared 3D modernos",
+        "longDescription": "Set de 9 paneles geométricos que crean un impresionante arte de pared 3D. Cada panel presenta patrones únicos que crean hermosas sombras y profundidad. Se pueden organizar en múltiples configuraciones. Superficie compatible con pintura para colores personalizados. Transforma cualquier pared en una obra de arte moderna.",
+        "price": 58.5,
+        "images": [
+          "/src/assets/products/wall_art_stl_2.png",
+          "/src/assets/products/wall_art_stl_1764921133006.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 92000,
+        "printTime": "14-16 horas",
+        "fileSize": "74 MB",
+        "featured": false,
+        "rating": 4.6,
+        "reviews": 134,
+        "quantity": 1
+      }
+    ],
+    "total": 217.86,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764982570203",
+    "date": "2025-12-06T00:56:10.203Z"
+  },
+  {
+    "items": [
+      {
+        "id": "3",
+        "name": "Catedral Gótica",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura y Edificios",
+        "shortDescription": "Arquitectura detallada de catedral medieval",
+        "longDescription": "Impresionante modelo de catedral gótica con arbotantes, patrones de vitrales y detalles complejos de mampostería. Se puede imprimir como un todo o en secciones. Perfecto para entusiastas de la arquitectura, terrenos de wargaming o propósitos educativos.",
+        "price": 89.99,
+        "images": [
+          "/src/assets/products/cathedral_stl_2.png",
+          "/src/assets/products/cathedral_stl_1764920966827.png"
+        ],
+        "fileFormat": "STL",
+        "polygonCount": 320000,
+        "printTime": "24-28 horas",
+        "fileSize": "150 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 156,
+        "quantity": 1
+      }
+    ],
+    "total": 254.3884,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-002",
+    "id": "ORD-1764982594635",
+    "date": "2025-12-06T00:56:34.635Z"
+  }
+]

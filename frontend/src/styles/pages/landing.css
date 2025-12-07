@@ -1,0 +1,287 @@
+/* Landing Page - BEM Methodology */
+
+.landing {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-bg-primary);
+}
+
+/* Hero Section */
+.landing__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8);
+    background: linear-gradient(135deg,
+            var(--color-primary) 0%,
+            var(--color-primary-light) 50%,
+            var(--color-accent) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing__hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.landing__hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.landing__brand {
+    margin-bottom: var(--spacing-6);
+}
+
+.landing__brand-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: var(--spacing-4);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.landing__brand-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    margin: 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.landing__tagline {
+    font-size: var(--font-size-xl);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-8);
+    line-height: 1.6;
+}
+
+.landing__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.landing__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    color: white;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease;
+}
+
+.landing__feature:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.landing__feature-icon {
+    font-size: var(--font-size-2xl);
+}
+
+/* Auth Section */
+.landing__auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-8);
+    background: var(--color-bg-secondary);
+}
+
+.landing__auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--color-surface);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+}
+
+.landing__auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-6);
+    background: var(--color-bg-tertiary);
+    padding: var(--spacing-1);
+    border-radius: var(--radius-lg);
+}
+
+.landing__auth-tab {
+    padding: var(--spacing-3);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.landing__auth-tab--active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.landing__error {
+    padding: var(--spacing-3);
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--color-error);
+    margin-bottom: var(--spacing-4);
+    animation: shake 0.3s ease-in-out;
+}
+
+.landing__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.landing__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.landing__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+}
+
+.landing__input {
+    width: 100%;
+    padding: var(--spacing-3);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    transition: all 0.2s ease;
+}
+
+.landing__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.landing__input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.landing__demo {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-4);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-border);
+}
+
+.landing__demo-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-2);
+    color: var(--color-text-secondary);
+}
+
+.landing__demo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.landing__demo-list li {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-family: 'Courier New', monospace;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .landing {
+        grid-template-columns: 1fr;
+    }
+
+    .landing__hero {
+        min-height: 40vh;
+        padding: var(--spacing-6);
+    }
+
+    .landing__brand-icon {
+        font-size: 4rem;
+    }
+
+    .landing__brand-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .landing__tagline {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 640px) {
+    .landing__auth {
+        padding: var(--spacing-4);
+    }
+
+    .landing__auth-card {
+        padding: var(--spacing-6);
+    }
+
+    .landing__hero {
+        min-height: 50vh;
+    }
+
+    .landing__features {
+        gap: var(--spacing-2);
+    }
+
+    .landing__feature {
+        font-size: var(--font-size-sm);
+    }
+}

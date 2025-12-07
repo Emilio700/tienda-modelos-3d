@@ -1,0 +1,131 @@
+/* HomePage Styles - BEM Methodology */
+
+.home-page {
+    padding: var(--spacing-8) 0;
+}
+
+.home-page__hero {
+    text-align: center;
+    padding: var(--spacing-12) 0;
+}
+
+.home-page__title {
+    font-size: var(--font-size-4xl);
+    font-family: var(--font-family-heading);
+    margin-bottom: var(--spacing-4);
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-page__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-page__search {
+    display: flex;
+    justify-content: center;
+}
+
+.home-page__results {
+    margin-top: var(--spacing-8);
+}
+
+.home-page__results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-6);
+}
+
+.home-page__results-title {
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-family-heading);
+    margin: 0;
+}
+
+.home-page__results-count {
+    color: var(--color-text-secondary);
+}
+
+.home-page__content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-6);
+    align-items: start;
+    padding: 0 var(--spacing-3);
+    /* Margen para productos */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .home-page__content {
+        grid-template-columns: 250px 1fr;
+        gap: var(--spacing-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        padding: var(--spacing-4) 0;
+    }
+
+    .home-page__hero {
+        padding: var(--spacing-6) 0;
+    }
+
+    .home-page__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .home-page__subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-4);
+    }
+
+    .home-page__content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        padding: 0 var(--spacing-2);
+        /* Padding reducido en móvil */
+    }
+
+    .home-page__results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-2);
+        padding: 0 var(--spacing-2);
+    }
+
+    .home-page__results-title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-page__hero {
+        padding: var(--spacing-4) 0;
+    }
+
+    .home-page__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .home-page__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .home-page__results-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .home-page__results-count {
+        font-size: var(--font-size-sm);
+    }
+}

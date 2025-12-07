@@ -1,0 +1,19 @@
+{
+  "name": "3d-models-backend",
+  "version": "1.0.0",
+  "description": "Backend API para tienda de modelos 3D con autenticación",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["express", "jwt", "auth"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

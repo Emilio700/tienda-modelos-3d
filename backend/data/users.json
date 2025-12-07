@@ -1,0 +1,37 @@
+[
+  {
+    "id": "user-001",
+    "name": "Juan Pérez",
+    "email": "user1@demo.com",
+    "password": "pass123",
+    "createdAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "user-002",
+    "name": "María García",
+    "email": "user2@demo.com",
+    "password": "pass123",
+    "createdAt": "2024-02-20T14:30:00.000Z"
+  },
+  {
+    "id": "user-003",
+    "name": "Carlos López",
+    "email": "user3@demo.com",
+    "password": "pass123",
+    "createdAt": "2024-03-10T09:15:00.000Z"
+  },
+  {
+    "id": "user-004",
+    "name": "Ana Martínez",
+    "email": "user4@demo.com",
+    "password": "pass123",
+    "createdAt": "2024-04-05T16:45:00.000Z"
+  },
+  {
+    "id": "user-005",
+    "name": "Pedro Sánchez",
+    "email": "user5@demo.com",
+    "password": "pass123",
+    "createdAt": "2024-05-12T11:20:00.000Z"
+  }
+]
