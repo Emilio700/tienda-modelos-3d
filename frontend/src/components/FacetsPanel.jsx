@@ -44,7 +44,7 @@ function FacetsPanel({ facets, onApplyFilters, currentFilters = {} }) {
         // Agregar rango de precio si está seleccionado
         if (selectedPriceRange) {
             // Parsear el rango (formato: "50-100" o "200+")
-            const key = selectedPriceRange.key;
+            const key = selectedPriceRange.range;
             if (key.includes('-')) {
                 const [min, max] = key.split('-').map(Number);
                 filters.precioMin = min;
@@ -97,20 +97,20 @@ function FacetsPanel({ facets, onApplyFilters, currentFilters = {} }) {
             </div>
 
             {/* Categorías */}
-            {facets.categorias && facets.categorias.length > 0 && (
+            {facets.categories && facets.categories.length > 0 && (
                 <div className="facet-group">
                     <h4>Categorías</h4>
                     <div className="facet-items">
-                        {facets.categorias.map((cat) => (
-                            <label key={cat.key} className="facet-item">
+                        {facets.categories.map((cat) => (
+                            <label key={cat.name} className="facet-item">
                                 <input
                                     type="checkbox"
-                                    checked={selectedCategories.includes(cat.key)}
-                                    onChange={() => handleCategoryToggle(cat.key)}
+                                    checked={selectedCategories.includes(cat.name)}
+                                    onChange={() => handleCategoryToggle(cat.name)}
                                 />
                                 <span className="facet-label">
-                                    {cat.key}
-                                    <span className="facet-count">({cat.doc_count})</span>
+                                    {cat.name}
+                                    <span className="facet-count">({cat.count})</span>
                                 </span>
                             </label>
                         ))}
@@ -119,21 +119,21 @@ function FacetsPanel({ facets, onApplyFilters, currentFilters = {} }) {
             )}
 
             {/* Rango de Precio */}
-            {facets.precios && facets.precios.length > 0 && (
+            {facets.priceRanges && facets.priceRanges.length > 0 && (
                 <div className="facet-group">
                     <h4>Precio</h4>
                     <div className="facet-items">
-                        {facets.precios.map((range) => (
-                            <label key={range.key} className="facet-item">
+                        {facets.priceRanges.map((range) => (
+                            <label key={range.range} className="facet-item">
                                 <input
                                     type="radio"
                                     name="precio"
-                                    checked={selectedPriceRange?.key === range.key}
+                                    checked={selectedPriceRange?.range === range.range}
                                     onChange={() => handlePriceRangeChange(range)}
                                 />
                                 <span className="facet-label">
-                                    ${range.key}
-                                    <span className="facet-count">({range.doc_count})</span>
+                                    ${range.range}
+                                    <span className="facet-count">({range.count})</span>
                                 </span>
                             </label>
                         ))}

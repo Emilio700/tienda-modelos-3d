@@ -125,9 +125,10 @@ function LoginPage() {
                     <div className="login-page__demo">
                         <p className="login-page__demo-title">👤 Usuarios de prueba:</p>
                         <ul className="login-page__demo-list">
-                            <li>user1@demo.com / pass123</li>
-                            <li>user2@demo.com / pass123</li>
-                            <li>user3@demo.com / pass123</li>
+                            <li>Aksell Emilio Cornejo Carmona / user1@demo.com / pass123</li>
+                            <li>Giovanni Adair Avilés García / user2@demo.com / pass123</li>
+                            <li>Yimy Enrique Huaman Quispe / user3@demo.com / pass123</li>
+                            <li>Nicolas Reyes Meza / user4@demo.com / pass123</li>
                         </ul>
                     </div>
                 </div>

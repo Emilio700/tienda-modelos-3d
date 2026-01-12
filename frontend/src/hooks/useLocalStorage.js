@@ -8,22 +8,29 @@ import { useState, useEffect } from 'react';
  */
 function useLocalStorage(key, initialValue) {
   // Estado para almacenar nuestro valor
-  // Se pasa una función de inicialización a useState para que la lógica solo se ejecute una vez
   const [storedValue, setStoredValue] = useState(() => {
     if (typeof window === 'undefined') {
       return initialValue;
     }
-    
     try {
-      // Obtener del localStorage por key
       const item = window.localStorage.getItem(key);
-      // Parsear el JSON almacenado o si no existe devolver initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       console.error(`Error loading localStorage key "${key}":`, error);
       return initialValue;
     }
   });
+
+  // Efecto para recargar el valor si la key cambia
+  useEffect(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      setStoredValue(item ? JSON.parse(item) : initialValue);
+    } catch (error) {
+      console.error(`Error reloading localStorage key "${key}":`, error);
+      setStoredValue(initialValue);
+    }
+  }, [key]);
 
   // Devolver una versión envuelta de la función setter de useState que ...
   // ... persiste el nuevo valor en localStorage.

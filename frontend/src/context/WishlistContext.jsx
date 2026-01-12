@@ -1,11 +1,34 @@
 import { createContext, useContext } from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const WishlistContext = createContext();
 
 export function WishlistProvider({ children }) {
-    const [wishlist, setWishlist] = useLocalStorage('3d-models-wishlist', []);
+    // Detectar usuario actual para separar wishlists
+    const [userId, setUserId] = useState(() => {
+        const savedUser = localStorage.getItem('auth-user');
+        return savedUser ? JSON.parse(savedUser).id : 'guest';
+    });
+
+    useEffect(() => {
+        const handleAuthChange = () => {
+            const savedUser = localStorage.getItem('auth-user');
+            setUserId(savedUser ? JSON.parse(savedUser).id : 'guest');
+        };
+
+        window.addEventListener('auth-change', handleAuthChange);
+        window.addEventListener('storage', handleAuthChange);
+
+        return () => {
+            window.removeEventListener('auth-change', handleAuthChange);
+            window.removeEventListener('storage', handleAuthChange);
+        };
+    }, []);
+
+    const wishlistKey = `3d-models-wishlist-${userId}`;
+
+    const [wishlist, setWishlist] = useLocalStorage(wishlistKey, []);
 
     // Agregar producto a la wishlist
     const addToWishlist = useCallback((product) => {

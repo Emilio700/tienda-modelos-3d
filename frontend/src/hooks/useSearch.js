@@ -51,9 +51,10 @@ function useSearch() {
       if (!response.ok) throw new Error('Error al cargar facets');
       
       const data = await response.json();
+      console.log('✅ Facets recibidos:', data); // DEBUG
       setFacets(data);
     } catch (err) {
-      console.error('Error fetching facets:', err);
+      console.error('❌ Error fetching facets:', err);
     }
   };
 

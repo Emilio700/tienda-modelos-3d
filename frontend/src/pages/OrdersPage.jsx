@@ -254,7 +254,7 @@ function OrdersPage() {
                                                 </p>
                                             </div>
                                             <span style={{ fontWeight: 'var(--font-weight-semibold)' }}>
-                                                ${(item.price * item.quantity).toFixed(2)}
+                                                ${((typeof item.price === 'number' ? item.price : (typeof item.precio === 'number' ? item.precio : 0)) * item.quantity).toFixed(2)}
                                             </span>
                                         </div>
                                     ))}

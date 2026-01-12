@@ -1,12 +1,36 @@
 import { createContext, useContext } from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-    // Usar localStorage para persistir el carrito
-    const [cart, setCart] = useLocalStorage('3d-models-cart', []);
+    // Detectar usuario actual para separar carritos
+    const [userId, setUserId] = useState(() => {
+        const savedUser = localStorage.getItem('auth-user');
+        return savedUser ? JSON.parse(savedUser).id : 'guest';
+    });
+
+    useEffect(() => {
+        // Escuchar cambios de login/logout
+        const handleAuthChange = () => {
+            const savedUser = localStorage.getItem('auth-user');
+            setUserId(savedUser ? JSON.parse(savedUser).id : 'guest');
+        };
+
+        window.addEventListener('auth-change', handleAuthChange);
+        window.addEventListener('storage', handleAuthChange); // Para pestañas cruzadas
+
+        return () => {
+            window.removeEventListener('auth-change', handleAuthChange);
+            window.removeEventListener('storage', handleAuthChange);
+        };
+    }, []);
+
+    const cartKey = `3d-models-cart-${userId}`;
+
+    // Usar localStorage para persistir el carrito con key dinámica
+    const [cart, setCart] = useLocalStorage(cartKey, []);
 
     // Agregar producto al carrito
     const addToCart = useCallback((product, quantity = 1) => {
@@ -58,7 +82,10 @@ export function CartProvider({ children }) {
 
     // Calcular subtotal del carrito
     const getSubtotal = useCallback(() => {
-        return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        return cart.reduce((total, item) => {
+            const price = typeof item.price === 'number' ? item.price : (typeof item.precio === 'number' ? item.precio : 0);
+            return total + (price * item.quantity);
+        }, 0);
     }, [cart]);
 
     // Calcular impuestos (16%)

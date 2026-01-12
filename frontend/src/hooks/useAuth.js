@@ -48,6 +48,9 @@ function useAuth() {
       setUser(data.user);
       localStorage.setItem('auth-token', data.token);
       localStorage.setItem('auth-user', JSON.stringify(data.user));
+      
+      // Notificar cambio de auth a otros componentes
+      window.dispatchEvent(new Event('auth-change'));
 
       return { success: true };
     } catch (error) {
@@ -79,6 +82,9 @@ function useAuth() {
       setUser(data.user);
       localStorage.setItem('auth-token', data.token);
       localStorage.setItem('auth-user', JSON.stringify(data.user));
+      
+      // Notificar cambio de auth
+      window.dispatchEvent(new Event('auth-change'));
 
       return { success: true };
     } catch (error) {
@@ -94,6 +100,7 @@ function useAuth() {
     setUser(null);
     localStorage.removeItem('auth-token');
     localStorage.removeItem('auth-user');
+    window.dispatchEvent(new Event('auth-change'));
   };
 
   /**
@@ -126,7 +133,7 @@ function useAuth() {
     }
 
     try {
-      const response = await fetch(`${API_URL}/users/${user.id}/orders`, {
+      const response = await fetch(`${API_BASE_URL}/api/users/${user.id}/orders`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -153,7 +160,7 @@ function useAuth() {
     }
 
     try {
-      const response = await fetch(`${API_URL}/users/${user.id}/orders`, {
+      const response = await fetch(`${API_BASE_URL}/api/users/${user.id}/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

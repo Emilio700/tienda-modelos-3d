@@ -46,8 +46,8 @@ function ProductCard({ product }) {
                         </span>
                     </button>
                     <img
-                        src={product.images[0]}
-                        alt={product.name}
+                        src={product.images?.[1] || product.imagen || '/images/placeholder.jpg'}
+                        alt={product.name || 'Producto'}
                         className="product-card__image"
                         loading="lazy"
                     />
@@ -55,33 +55,35 @@ function ProductCard({ product }) {
             </Link>
 
             <div className="product-card__content">
-                <span className="product-card__category">{product.category}</span>
+                <span className="product-card__category">{product.category || 'Categoría'}</span>
 
                 <Link to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
-                    <h3 className="product-card__title">{product.name}</h3>
+                    <h3 className="product-card__title">{product.name || 'Producto'}</h3>
                 </Link>
 
-                <p className="product-card__manufacturer">
-                    por {product.manufacturer}
-                </p>
+                {product.manufacturer && (
+                    <p className="product-card__manufacturer">
+                        por {product.manufacturer}
+                    </p>
+                )}
 
                 <p className="product-card__description">
-                    {product.shortDescription}
+                    {product.shortDescription || product.descripcion || ''}
                 </p>
 
                 <div className="product-card__rating">
                     <span className="product-card__stars">
-                        {renderStars(product.rating)}
+                        {renderStars(product.rating || 0)}
                     </span>
                     <span>
-                        {product.rating} ({product.reviews})
+                        {product.rating || 0} {product.reviews ? `(${product.reviews})` : ''}
                     </span>
                 </div>
 
                 <div className="product-card__footer">
                     <span className="product-card__price">
                         <span className="product-card__price-currency">$</span>
-                        {product.price.toFixed(2)}
+                        {(product.precio || product.price || 0).toFixed(2)}
                     </span>
                 </div>
             </div>

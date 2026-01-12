@@ -532,5 +532,343 @@
     "userId": "user-001",
     "id": "ORD-1765105268547",
     "date": "2025-12-07T11:01:08.547Z"
+  },
+  {
+    "items": [
+      {
+        "id": "2",
+        "name": "Nave Espacial Futurista",
+        "manufacturer": "TechDesign Studio",
+        "category": "Ciencia Ficción",
+        "shortDescription": "Diseño detallado de nave espacial de ciencia ficción",
+        "precio": 89.99,
+        "imagen": "/src/assets/products/spaceship_stl_1764920953123.png",
+        "images": [
+          "/src/assets/products/spaceship_stl_1764920953123.png",
+          "/src/assets/products/spaceship_stl_2.png"
+        ],
+        "rating": 4,
+        "reviews": 156,
+        "disponible": true,
+        "tags": [
+          "nave",
+          "espacial",
+          "sci-fi",
+          "LED"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 254.3884,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "AQUILES SERDAN 1507, 2 A",
+      "city": "MAZATLAN",
+      "zipCode": "82000",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768196605229",
+    "date": "2026-01-12T05:43:25.229Z"
+  },
+  {
+    "items": [
+      {
+        "id": "1",
+        "name": "Mini Dragón Articulado",
+        "manufacturer": "MakerBot Models",
+        "category": "Fantasía",
+        "shortDescription": "Modelo de dragón articulado imprimible en 3D",
+        "precio": 45.99,
+        "imagen": "/src/assets/products/minidragon2.jpg",
+        "images": [
+          "/src/assets/products/minidragon2.jpg",
+          "/src/assets/products/minidragon3.jpg"
+        ],
+        "rating": 5,
+        "reviews": 89,
+        "disponible": true,
+        "tags": [
+          "dragón",
+          "articulado",
+          "fantasía",
+          "coleccionable"
+        ],
+        "quantity": 5
+      },
+      {
+        "id": "4",
+        "name": "Set de Engranajes Funcionales",
+        "manufacturer": "EduTech Models",
+        "category": "Educativo",
+        "shortDescription": "Colección de 12 engranajes funcionales de diferentes tamaños",
+        "precio": 34.99,
+        "imagen": "/src/assets/products/gears_set_stl_1764920981853.png",
+        "images": [
+          "/src/assets/products/gears_set_stl_1764920981853.png",
+          "/src/assets/products/gears_set_stl_2png.png"
+        ],
+        "rating": 4,
+        "reviews": 178,
+        "disponible": true,
+        "tags": [
+          "engranajes",
+          "mecánica",
+          "educativo",
+          "funcional"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "3",
+        "name": "Catedral Gótica Miniatura",
+        "manufacturer": "Creative Crafts",
+        "category": "Arquitectura",
+        "shortDescription": "Réplica arquitectónica de catedral gótica con detalles intrincados",
+        "precio": 129.99,
+        "imagen": "/src/assets/products/cathedral_stl_1764920966827.png",
+        "images": [
+          "/src/assets/products/cathedral_stl_1764920966827.png",
+          "/src/assets/products/cathedral_stl_2.png"
+        ],
+        "rating": 5,
+        "reviews": 234,
+        "disponible": true,
+        "tags": [
+          "catedral",
+          "gótico",
+          "arquitectura",
+          "medieval"
+        ],
+        "quantity": 5
+      },
+      {
+        "id": "5",
+        "name": "Colección de Jarrones Decorativos",
+        "manufacturer": "Home Design Studio",
+        "category": "Decoración",
+        "shortDescription": "Pack de 5 diseños únicos de jarrones con patrones geométricos",
+        "precio": 24.99,
+        "imagen": "/src/assets/products/vase_collection_stl_1764921003743.png",
+        "images": [
+          "/src/assets/products/vase_collection_stl_1764921003743.png",
+          "/src/assets/products/vase_collection_stl_2.png"
+        ],
+        "rating": 5,
+        "reviews": 92,
+        "disponible": false,
+        "tags": [
+          "jarrón",
+          "decoración",
+          "geométrico",
+          "hogar"
+        ],
+        "quantity": 1
+      },
+      {
+        "id": "6",
+        "name": "Ajedrez Temático Medieval",
+        "manufacturer": "Chess Masters",
+        "category": "Juegos",
+        "shortDescription": "Set completo de ajedrez (32 piezas) con temática medieval",
+        "precio": 159.99,
+        "imagen": "/src/assets/products/chess_set_stl_1764921019139.png",
+        "images": [
+          "/src/assets/products/chess_set_stl_1764921019139.png",
+          "/src/assets/products/chess_set_stl_2.png"
+        ],
+        "rating": 5,
+        "reviews": 267,
+        "disponible": true,
+        "tags": [
+          "ajedrez",
+          "medieval",
+          "juego",
+          "tablero"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 1275.8492,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "AQUILES SERDAN 1507, 2 A",
+      "city": "MAZATLAN",
+      "zipCode": "82000",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768196797786",
+    "date": "2026-01-12T05:46:37.786Z"
+  },
+  {
+    "items": [
+      {
+        "id": "1",
+        "name": "Mini Dragón Articulado",
+        "manufacturer": "MakerBot Models",
+        "category": "Fantasía",
+        "shortDescription": "Modelo de dragón articulado imprimible en 3D",
+        "precio": 45.99,
+        "imagen": "/src/assets/products/minidragon2.jpg",
+        "images": [
+          "/src/assets/products/minidragon2.jpg",
+          "/src/assets/products/minidragon3.jpg"
+        ],
+        "rating": 5,
+        "reviews": 89,
+        "disponible": true,
+        "tags": [
+          "dragón",
+          "articulado",
+          "fantasía",
+          "coleccionable"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 203.3484,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "AQUILES SERDAN 1507, 2 A",
+      "city": "MAZATLAN",
+      "zipCode": "82000",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768196894490",
+    "date": "2026-01-12T05:48:14.490Z"
+  },
+  {
+    "items": [
+      {
+        "id": "2",
+        "name": "Nave Espacial Futurista",
+        "manufacturer": "TechDesign Studio",
+        "category": "Ciencia Ficción",
+        "shortDescription": "Diseño detallado de nave espacial de ciencia ficción",
+        "precio": 89.99,
+        "imagen": "/src/assets/products/spaceship_stl_1764920953123.png",
+        "images": [
+          "/src/assets/products/spaceship_stl_1764920953123.png",
+          "/src/assets/products/spaceship_stl_2.png"
+        ],
+        "rating": 4,
+        "reviews": 156,
+        "disponible": true,
+        "tags": [
+          "nave",
+          "espacial",
+          "sci-fi",
+          "LED"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 254.3884,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "Calle San Armando",
+      "city": "Mazatlan",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768196921365",
+    "date": "2026-01-12T05:48:41.365Z"
+  },
+  {
+    "items": [
+      {
+        "id": "1",
+        "name": "Mini Dragón Articulado",
+        "manufacturer": "MakerBot Models",
+        "category": "Fantasía",
+        "shortDescription": "Modelo de dragón articulado imprimible en 3D",
+        "precio": 45.99,
+        "imagen": "/src/assets/products/minidragon2.jpg",
+        "images": [
+          "/src/assets/products/minidragon2.jpg",
+          "/src/assets/products/minidragon3.jpg"
+        ],
+        "rating": 5,
+        "reviews": 89,
+        "disponible": true,
+        "tags": [
+          "dragón",
+          "articulado",
+          "fantasía",
+          "coleccionable"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 203.3484,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "AQUILES SERDAN 1507, 2 A",
+      "city": "MAZATLAN",
+      "zipCode": "82000",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768196947015",
+    "date": "2026-01-12T05:49:07.015Z"
+  },
+  {
+    "items": [
+      {
+        "id": "1",
+        "name": "Mini Dragón Articulado",
+        "manufacturer": "MakerBot Models",
+        "category": "Fantasía",
+        "shortDescription": "Modelo de dragón articulado imprimible en 3D",
+        "precio": 45.99,
+        "imagen": "/src/assets/products/minidragon2.jpg",
+        "images": [
+          "/src/assets/products/minidragon2.jpg",
+          "/src/assets/products/minidragon3.jpg"
+        ],
+        "rating": 5,
+        "reviews": 89,
+        "disponible": true,
+        "tags": [
+          "dragón",
+          "articulado",
+          "fantasía",
+          "coleccionable"
+        ],
+        "quantity": 1
+      }
+    ],
+    "total": 203.3484,
+    "shippingInfo": {
+      "name": "PYANSA",
+      "email": "emilio.cornejo@pyansa.com.mx",
+      "phone": "6691722951",
+      "address": "AQUILES SERDAN 1507, 2 A",
+      "city": "MAZATLAN",
+      "zipCode": "82000",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1768197058480",
+    "date": "2026-01-12T05:50:58.480Z"
   }
 ]

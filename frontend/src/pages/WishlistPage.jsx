@@ -78,7 +78,7 @@ function WishlistPage() {
                     >
                         <div style={{ position: 'relative', paddingTop: '75%', overflow: 'hidden' }}>
                             <img
-                                src={product.images[0]}
+                                src={(product.images && product.images.length > 0) ? product.images[1] : '/placeholder-image.jpg'}
                                 alt={product.name}
                                 style={{
                                     position: 'absolute',
@@ -164,10 +164,10 @@ function WishlistPage() {
                                     fontWeight: 'var(--font-weight-bold)',
                                     color: 'var(--color-primary-light)'
                                 }}>
-                                    ${product.price.toFixed(2)}
+                                    ${(typeof product.price === 'number' ? product.price : (typeof product.precio === 'number' ? product.precio : 0)).toFixed(2)}
                                 </span>
                                 <span style={{ color: 'var(--color-warning)' }}>
-                                    {'⭐'.repeat(Math.floor(product.rating))} {product.rating}
+                                    {'⭐'.repeat(Math.floor(product.rating || 0))} {product.rating || 0}
                                 </span>
                             </div>
 

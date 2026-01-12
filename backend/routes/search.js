@@ -67,15 +67,15 @@ router.get('/search', async (req, res) => {
         query: {
           multi_match: {
             query: q,
-            fields: ['nombre^3', 'descripcion', 'categoria'],
+            fields: ['name^3', 'shortDescription', 'category', 'manufacturer'],
             fuzziness: 'AUTO',
             operator: 'or'
           }
         },
         highlight: {
           fields: {
-            nombre: {},
-            descripcion: {}
+            name: {},
+            shortDescription: {}
           }
         }
       }
@@ -106,22 +106,22 @@ router.get('/search/autocomplete', async (req, res) => {
       index: 'productos',
       body: {
         query: {
-          match: {
-            'nombre.search_as_you_type': {
-              query: prefix,
-              operator: 'and'
-            }
+          multi_match: {
+            query: prefix,
+            fields: ['name^2', 'category'],
+            type: 'bool_prefix',
+            fuzziness: 'AUTO'
           }
         },
-        _source: ['nombre', 'id', 'categoria'],
+        _source: ['name', 'id', 'category'],
         size: 5
       }
     });
     
     res.json(result.hits.hits.map(hit => ({
       id: hit._id,
-      nombre: hit._source.nombre,
-      categoria: hit._source.categoria
+      nombre: hit._source.name,
+      categoria: hit._source.category
     })));
   } catch (error) {
     console.error('Error autocomplete:', error);
@@ -139,7 +139,7 @@ router.get('/search/facets', async (req, res) => {
         aggs: {
           categorias: {
             terms: { 
-              field: 'categoria.keyword', 
+              field: 'category.keyword', 
               size: 20,
               order: { _count: 'desc' }
             }
@@ -189,7 +189,7 @@ router.post('/search/filter', async (req, res) => {
       must.push({
         multi_match: {
           query,
-          fields: ['nombre^3', 'descripcion', 'categoria']
+          fields: ['name^3', 'shortDescription', 'category', 'manufacturer']
         }
       });
     }
@@ -197,7 +197,7 @@ router.post('/search/filter', async (req, res) => {
     // Filtro de categorías
     if (categorias && categorias.length > 0) {
       filter.push({
-        terms: { 'categoria.keyword': categorias }
+        terms: { 'category.keyword': categorias }
       });
     }
     

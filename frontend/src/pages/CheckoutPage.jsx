@@ -96,7 +96,7 @@ function CheckoutPage() {
             // Redirigir después de 3 segundos
             setTimeout(() => {
                 navigate('/orders', { state: { newOrder: true } });
-            }, 3000);
+            }, 500);
         } else {
             setIsProcessing(false);
             alert('Error al crear el pedido: ' + result.error);
@@ -403,7 +403,7 @@ function CheckoutPage() {
                             fontSize: 'var(--font-size-sm)',
                             color: 'var(--color-text-muted)'
                         }}>
-                            Redirigiendo a tus pedidos...
+                            Puedes ver el detalle en "Mis Pedidos". Redirigiendo...
                         </p>
                     </div>
                 </div>

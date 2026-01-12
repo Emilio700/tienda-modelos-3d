@@ -1,8 +1,9 @@
 .facets-panel {
-    background: white;
+    background: rgba(30, 34, 55, 0.95);
     border-radius: 16px;
     padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(102, 126, 234, 0.2);
     position: sticky;
     top: 2rem;
     max-height: calc(100vh - 4rem);
@@ -22,7 +23,7 @@
 .facets-header h3 {
     margin: 0;
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff;
     font-weight: 700;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .clear-all-btn:hover {
-    background: #f8f9ff;
+    background: rgba(102, 126, 234, 0.15);
 }
 
 .facets-loading {
@@ -59,7 +60,7 @@
 .facet-group h4 {
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
-    color: #444;
+    color: #e0e0e0;
     font-weight: 600;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .facet-item:hover {
-    background: #f8f9ff;
+    background: rgba(102, 126, 234, 0.15);
 }
 
 .facet-item input[type="checkbox"],
@@ -97,7 +98,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #333;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
@@ -111,11 +112,11 @@
 .rating-select {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 2px solid #e0e0e0;
+    border: 2px solid rgba(102, 126, 234, 0.3);
     border-radius: 8px;
     font-size: 1rem;
-    color: #333;
-    background: white;
+    color: #ffffff;
+    background: rgba(20, 24, 40, 0.8);
     cursor: pointer;
     transition: all 0.2s ease;
     appearance: none;

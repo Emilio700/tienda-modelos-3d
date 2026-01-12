@@ -188,8 +188,22 @@ function LandingPage() {
                             <div className="landing__demo">
                                 <p className="landing__demo-title">👤 Usuarios de prueba:</p>
                                 <ul className="landing__demo-list">
-                                    <li>user1@demo.com / pass123</li>
-                                    <li>user2@demo.com / pass123</li>
+                                    <li key="user1">
+                                        <strong style={{ color: 'var(--color-text)', marginBottom: '2px' }}>Aksell Emilio Cornejo Carmona</strong>
+                                        <span>user1@demo.com / pass123</span>
+                                    </li>
+                                    <li key="user2">
+                                        <strong style={{ color: 'var(--color-text)', marginBottom: '2px' }}>Giovanni Adair Avilés García</strong>
+                                        <span>user2@demo.com / pass123</span>
+                                    </li>
+                                    <li key="user3">
+                                        <strong style={{ color: 'var(--color-text)', marginBottom: '2px' }}>Yimy Enrique Huaman Quispe</strong>
+                                        <span>user3@demo.com / pass123</span>
+                                    </li>
+                                    <li key="user4">
+                                        <strong style={{ color: 'var(--color-text)', marginBottom: '2px' }}>Nicolas Reyes Meza</strong>
+                                        <span>user4@demo.com / pass123</span>
+                                    </li>
                                 </ul>
                             </div>
                         </form>

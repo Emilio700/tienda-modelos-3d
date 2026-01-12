@@ -196,7 +196,7 @@ function ReturnsPage() {
                                                 </p>
                                             </div>
                                             <span style={{ fontWeight: 'var(--font-weight-semibold)' }}>
-                                                ${(item.price * item.quantity).toFixed(2)}
+                                                ${((typeof item.price === 'number' ? item.price : (typeof item.precio === 'number' ? item.precio : 0)) * item.quantity).toFixed(2)}
                                             </span>
                                         </div>
                                     ))}
@@ -311,7 +311,7 @@ function ReturnsPage() {
                                         <div style={{ flex: 1 }}>
                                             <p style={{ fontWeight: 'var(--font-weight-semibold)' }}>{item.name}</p>
                                             <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--font-size-sm)' }}>
-                                                Cantidad: {item.quantity} | ${(item.price * item.quantity).toFixed(2)}
+                                                Cantidad: {item.quantity} | ${((typeof item.price === 'number' ? item.price : (typeof item.precio === 'number' ? item.precio : 0)) * item.quantity).toFixed(2)}
                                             </p>
                                         </div>
                                     </label>

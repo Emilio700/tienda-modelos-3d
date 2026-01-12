@@ -95,17 +95,6 @@ function HomePage() {
                         {!error && (
                             <ProductGrid products={products} loading={loading} />
                         )}
-
-                        {!loading && !error && products.length === 0 && (
-                            <div className="no-results">
-                                <p className="no-results__icon">🔍</p>
-                                <h3>No se encontraron productos</h3>
-                                <p>Intenta con otros términos de búsqueda o filtros</p>
-                                <button onClick={clearFilters} className="btn-primary">
-                                    Ver todos los productos
-                                </button>
-                            </div>
-                        )}
                     </div>
                 </div>
             </section>

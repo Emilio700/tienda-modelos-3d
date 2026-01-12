@@ -86,7 +86,7 @@ function CartPage() {
                                     </div>
 
                                     <span className="cart-page__item-price">
-                                        ${(item.price * item.quantity).toFixed(2)}
+                                        ${((typeof item.price === 'number' ? item.price : (typeof item.precio === 'number' ? item.precio : 0)) * item.quantity).toFixed(2)}
                                     </span>
 
                                     <button

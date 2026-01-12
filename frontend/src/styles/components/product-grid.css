@@ -12,6 +12,12 @@
 .product-grid--empty {
     text-align: center;
     padding: 4rem var(--spacing-4);
+    background-color: #aa9c9c1a;
+    /* Warm, low opacity background */
+    border-radius: var(--radius-lg);
+    margin: 2rem auto;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
 }
 
 .product-grid__empty-icon {

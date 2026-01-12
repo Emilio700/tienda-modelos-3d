@@ -24,7 +24,7 @@ function ProductDetailPage() {
         const found = mockProducts.find(p => p.id === id);
         if (found) {
             setProduct(found);
-            setSelectedImage(0);
+            setSelectedImage(0); // Mostrar segunda imagen por defecto
         } else {
             // Producto no encontrado, redirigir
             navigate('/store');
