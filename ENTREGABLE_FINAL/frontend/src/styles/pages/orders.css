@@ -1,0 +1,192 @@
+/* Orders Page Styles - BEM Methodology */
+
+.orders-page {
+    padding: var(--spacing-8) 0;
+}
+
+.orders-page__title {
+    margin-bottom: var(--spacing-6);
+}
+
+.orders-page__empty {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.orders-page__empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.orders-page__empty-text {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.orders-page__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.orders-page__order {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-md);
+}
+
+.orders-page__order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.orders-page__order-id {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.orders-page__order-date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.orders-page__order-status {
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.orders-page__order-status--processing {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--color-warning);
+}
+
+.orders-page__order-status--shipped {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--color-info);
+}
+
+.orders-page__order-status--delivered {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--color-success);
+}
+
+.orders-page__order-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+}
+
+.orders-page__order-item {
+    display: flex;
+    gap: var(--spacing-3);
+    align-items: center;
+}
+
+.orders-page__item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.orders-page__item-info {
+    flex: 1;
+}
+
+.orders-page__item-name {
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-1);
+}
+
+.orders-page__item-details {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.orders-page__item-price {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-light);
+}
+
+.orders-page__order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.orders-page__order-total {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.orders-page__order-total-label {
+    color: var(--color-text-secondary);
+    margin-right: var(--spacing-2);
+}
+
+.orders-page__order-total-value {
+    color: var(--color-primary-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .orders-page {
+        padding: var(--spacing-4) 0;
+    }
+
+    .orders-page__title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-4);
+    }
+
+    .orders-page__order {
+        padding: var(--spacing-4);
+    }
+
+    .orders-page__order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-2);
+    }
+
+    .orders-page__order-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .orders-page__order {
+        padding: var(--spacing-3);
+        border-radius: var(--radius-lg);
+    }
+
+    .orders-page__order-id {
+        font-size: var(--font-size-base);
+    }
+
+    .orders-page__item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .orders-page__item-name {
+        font-size: var(--font-size-sm);
+    }
+
+    .orders-page__order-total {
+        font-size: var(--font-size-lg);
+    }
+}

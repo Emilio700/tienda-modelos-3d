@@ -1,0 +1,69 @@
+GUÍA DE DESPLIEGUE EN HOSTINGER VPS 🚀
+
+Esta guía asume que ya tienes un VPS en Hostinger con Ubuntu/Debian y acceso por SSH.
+
+PASO 1: Preparar tu Código Local (Tu PC) 💻
+-------------------------------------------
+1. He actualizado tu `.gitignore` para que sea correcto.
+2. Inicia un repositorio Git (si no lo has hecho):
+   git init
+   git add .
+   git commit -m "Preparado para deploy en VPS"
+
+3. Sube este código a GitHub/GitLab (necesitarás crear un repo privado allá y hacer push).
+
+PASO 2: Preparar el VPS ☁️
+--------------------------
+1. Conéctate a tu VPS por SSH:
+   ssh root@TU_IP_VPS
+
+2. Instala Docker y Docker Compose (si no están):
+   apt update
+   apt install docker.io docker-compose -y
+
+3. Clona tu repositorio:
+   git clone https://github.com/Emilio700/tienda-modelos-3d.git
+   cd tienda-modelos-3d/backend
+
+PASO 3: Configuración Vital ⚙️
+-----------------------------
+Necesitamos ajustar una variable para que el Frontend sepa hablar con el Backend en la IP pública, no en "localhost".
+
+1. Edita el docker-compose.yml en el VPS:
+   nano docker-compose.yml
+
+2. Busca la sección 'frontend' y cambia VITE_API_URL:
+   
+   ANTES:
+   - VITE_API_URL=http://localhost:8080
+
+   DESPUÉS (Usa tu IP real):
+   - VITE_API_URL=http://TU_IP_VPS:8080
+
+3. Guarda con Ctrl+O, Enter, y sal con Ctrl+X.
+
+PASO 4: Levantar el Proyecto 🐳
+-------------------------------
+Dentro de la carpeta `backend` en tu VPS:
+
+1. Inicia los contenedores (esto tardará unos minutos la primera vez):
+   docker-compose up -d --build
+
+2. Verifica que estén corriendo:
+   docker ps
+
+3. Carga los datos de prueba (Seed):
+   npm run seed-es
+
+PASO 5: Abrir Puertos (Firewall) 🔥
+-----------------------------------
+En tu panel de Hostinger (no en la terminal, sino en la web de Hostinger):
+1. Ve a la sección de Firewall de tu VPS.
+2. Asegúrate de tener abiertos los puertos:
+   - 22 (SSH)
+   - 80 (HTTP)
+   - 5173 (Frontend)
+   - 8080 (Backend)
+
+¡Listo!
+Ahora deberías poder entrar a: https://makerdeep3d.com/unir

@@ -1,0 +1,5 @@
+Frontend: http://72.60.121.147:5173
+Backend: http://72.60.121.147:8080
+Repo: https://github.com/Emilio700/tienda-modelos-3d
+
+Producción: https://makerdeep3d.com/unir
