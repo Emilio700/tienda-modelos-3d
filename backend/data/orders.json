@@ -451,5 +451,86 @@
     "userId": "user-002",
     "id": "ORD-1764982594635",
     "date": "2025-12-06T00:56:34.635Z"
+  },
+  {
+    "items": [
+      {
+        "id": "1",
+        "name": "Miniatura de Dragón Fantástico",
+        "manufacturer": "MakerBot Models",
+        "category": "Personajes y Miniaturas",
+        "shortDescription": "Modelo detallado de dragón fantástico perfecto para juegos de mesa",
+        "longDescription": "Esta miniatura de dragón altamente detallada presenta escamas intrincadas, alas y una pose dinámica. Perfecto para juegos de rol de mesa, dioramas o exhibición. El modelo está optimizado para impresión FDM y de resina con excelente retención de detalles. Incluye versión pre-soportada para impresión en resina.",
+        "price": 149.99,
+        "images": [
+          "/src/assets/products/minidragon2.jpg",
+          "/src/assets/products/minidragon3.jpg"
+        ],
+        "fileFormat": "STL, OBJ",
+        "polygonCount": 250000,
+        "printTime": "12-15 horas",
+        "fileSize": "85 MB",
+        "featured": true,
+        "rating": 4.8,
+        "reviews": 234,
+        "quantity": 6
+      },
+      {
+        "id": "10",
+        "name": "Dragón Articulado",
+        "manufacturer": "3D Innovators",
+        "category": "Personajes y Miniaturas",
+        "shortDescription": "Dragón completamente articulado y posable",
+        "longDescription": "¡Increíble dragón articulado que se imprime completamente ensamblado! Presenta articulaciones móviles en alas, patas, cola y cuello. No se requiere montaje ni soportes. Este modelo de impresión en el lugar muestra las capacidades de la impresión 3D moderna. Horas de diversión de pose garantizadas.",
+        "price": 78.99,
+        "images": [
+          "/src/assets/products/dragonarticulado2.jpg",
+          "/src/assets/products/dragonarticulado1.jpg"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 125000,
+        "printTime": "10-12 horas",
+        "fileSize": "68 MB",
+        "featured": true,
+        "rating": 4.9,
+        "reviews": 412,
+        "quantity": 1
+      },
+      {
+        "id": "8",
+        "name": "Modelo de Auto Clásico",
+        "manufacturer": "Creative Crafts",
+        "category": "Vehículos y Máquinas",
+        "shortDescription": "Réplica de auto deportivo clásico de los años 60",
+        "longDescription": "Réplica altamente detallada de un auto deportivo clásico de la década de 1960. Presenta puertas que se abren, compartimento de motor detallado e interior auténtico. Se puede imprimir en varias escalas. Incluye versiones sólidas y huecas para diferentes necesidades de impresión. Perfecto para entusiastas automotrices.",
+        "price": 175,
+        "images": [
+          "/src/assets/products/car2.jpg",
+          "/src/assets/products/vintage_car_stl_1764921046131.png"
+        ],
+        "fileFormat": "STL, 3MF",
+        "polygonCount": 280000,
+        "printTime": "22-26 horas",
+        "fileSize": "165 MB",
+        "featured": false,
+        "rating": 4.7,
+        "reviews": 143,
+        "quantity": 1
+      }
+    ],
+    "total": 1338.5588,
+    "shippingInfo": {
+      "name": "Aksell Emilio Cornejo Carmona",
+      "email": "aksellemilio2000@gmail.com",
+      "phone": "6691722951",
+      "address": "San armando 4228 coto 10, Entre santa Teresa y cerrada",
+      "city": "Mazatlán",
+      "zipCode": "82124",
+      "paymentMethod": "credit-card"
+    },
+    "status": "processing",
+    "userId": "user-001",
+    "id": "ORD-1765105268547",
+    "date": "2025-12-07T11:01:08.547Z"
   }
 ]

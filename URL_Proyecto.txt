@@ -1,0 +1,7 @@
+URL del Proyecto Desplegado: https://tienda-modelos-3d.vercel.app
+
+URL del Backend (Railway): https://tienda-modelos-3d-production.up.railway.app
+
+Link video: https://photos.app.goo.gl/E9wW4Y6FCxLr4qve7
+
+Fecha de despliegue: Diciembre 2025 Proyecto: Tienda de Modelos 3D - E-commerce con React
