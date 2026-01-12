@@ -6,14 +6,20 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "seed-es": "node scripts/seed-elasticsearch.js"
   },
-  "keywords": ["express", "jwt", "auth"],
+  "keywords": [
+    "express",
+    "jwt",
+    "auth"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
+    "@elastic/elasticsearch": "^9.2.0",
     "cors": "^2.8.5",
+    "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2"
   }
 }

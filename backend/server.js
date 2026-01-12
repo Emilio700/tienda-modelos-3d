@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import searchRoutes from './routes/search.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,6 +37,9 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Rutas de búsqueda con Elasticsearch
+app.use('/api', searchRoutes);
 
 // Rutas de archivos de datos
 const USERS_FILE = path.join(__dirname, 'data', 'users.json');
