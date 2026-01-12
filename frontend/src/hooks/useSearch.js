@@ -1,148 +1,210 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { API_BASE_URL } from '../config/api';
 
 /**
- * Custom hook para buscar y filtrar productos
- * Maneja búsqueda por texto, filtros por categoría/fabricante/precio y ordenamiento
+ * Custom hook para búsqueda con Elasticsearch
+ * Maneja búsqueda full-text, autocompletado, filtros y facets
  */
-function useSearch(products) {
+function useSearch() {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [selectedManufacturers, setSelectedManufacturers] = useState([]);
-  const [priceRange, setPriceRange] = useState({ min: 0, max: Infinity });
-  const [sortBy, setSortBy] = useState('name-asc'); // name-asc, name-desc, price-asc, price-desc, rating
+  const [suggestions, setSuggestions] = useState([]);
+  const [facets, setFacets] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Resetear filtros
+  // Estados de filtros
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+  const [minRating, setMinRating] = useState(0);
+
+  // Cargar productos iniciales y facets al montar
+  useEffect(() => {
+    fetchProducts();
+    fetchFacets();
+  }, []);
+
+  // Cargar todos los productos (inicial)
+  const fetchProducts = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/productos`);
+      if (!response.ok) throw new Error('Error al cargar productos');
+      
+      const data = await response.json();
+      setProducts(data.products || []);
+      setFilteredProducts(data.products || []);
+    } catch (err) {
+      console.error('Error fetching products:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Obtener facets (agregaciones)
+  const fetchFacets = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/search/facets`);
+      if (!response.ok) throw new Error('Error al cargar facets');
+      
+      const data = await response.json();
+      setFacets(data);
+    } catch (err) {
+      console.error('Error fetching facets:', err);
+    }
+  };
+
+  // Búsqueda full-text con Elasticsearch
+  const handleSearch = useCallback(async (term) => {
+    setSearchTerm(term);
+    
+    // Si no hay término, recargar todos los productos
+    if (!term || term.trim() === '') {
+      fetchProducts();
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/search?q=${encodeURIComponent(term)}`
+      );
+      if (!response.ok) throw new Error('Error en la búsqueda');
+      
+      const data = await response.json();
+      setFilteredProducts(data);
+    } catch (err) {
+      console.error('Error searching:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Autocompletado con search-as-you-type
+  const handleAutocomplete = useCallback(async (prefix) => {
+    if (!prefix || prefix.length < 2) {
+      setSuggestions([]);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/search/autocomplete?prefix=${encodeURIComponent(prefix)}`
+      );
+      if (!response.ok) throw new Error('Error en autocompletado');
+      
+      const data = await response.json();
+      setSuggestions(data);
+    } catch (err) {
+      console.error('Error autocomplete:', err);
+      setSuggestions([]);
+    }
+  }, []);
+
+  // Aplicar filtros con facets
+  const applyFilters = useCallback(async (filters = {}) => {
+    setLoading(true);
+    setError(null);
+    
+    // Construir objeto de filtros
+    const filterPayload = {
+      query: searchTerm || undefined,
+      categorias: filters.categorias || selectedCategories,
+      precioMin: filters.precioMin,
+      precioMax: filters.precioMax,
+      ratingMin: filters.ratingMin !== undefined ? filters.ratingMin : minRating
+    };
+
+    // Actualizar estados locales si se pasaron valores
+    if (filters.categorias !== undefined) setSelectedCategories(filters.categorias);
+    if (filters.ratingMin !== undefined) setMinRating(filters.ratingMin);
+    if (filters.precioMin !== undefined || filters.precioMax !== undefined) {
+      setSelectedPriceRange({
+        min: filters.precioMin,
+        max: filters.precioMax
+      });
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/search/filter`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(filterPayload)
+      });
+      
+      if (!response.ok) throw new Error('Error al filtrar productos');
+      
+      const data = await response.json();
+      setFilteredProducts(data);
+    } catch (err) {
+      console.error('Error applying filters:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [searchTerm, selectedCategories, minRating]);
+
+  // Limpiar filtros
   const clearFilters = () => {
-    setSearchTerm('');
     setSelectedCategories([]);
-    setSelectedManufacturers([]);
-    setPriceRange({ min: 0, max: Infinity });
-    setSortBy('name-asc');
+    setSelectedPriceRange(null);
+    setMinRating(0);
+    setSearchTerm('');
+    fetchProducts();
+    fetchFacets();
   };
 
   // Toggle categoría
   const toggleCategory = (category) => {
-    setSelectedCategories(prev =>
-      prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
+    const newCategories = selectedCategories.includes(category)
+      ? selectedCategories.filter(c => c !== category)
+      : [...selectedCategories, category];
+    
+    setSelectedCategories(newCategories);
+    applyFilters({ categorias: newCategories });
   };
-
-  // Toggle fabricante
-  const toggleManufacturer = (manufacturer) => {
-    setSelectedManufacturers(prev =>
-      prev.includes(manufacturer)
-        ? prev.filter(m => m !== manufacturer)
-        : [...prev, manufacturer]
-    );
-  };
-
-  // Productos filtrados y ordenados (useMemo para optimización)
-  const filteredProducts = useMemo(() => {
-    let filtered = [...products];
-
-    // Filtrar por término de búsqueda
-    if (searchTerm) {
-      const lowerSearchTerm = searchTerm.toLowerCase();
-      filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(lowerSearchTerm) ||
-        product.shortDescription.toLowerCase().includes(lowerSearchTerm) ||
-        product.longDescription.toLowerCase().includes(lowerSearchTerm) ||
-        product.manufacturer.toLowerCase().includes(lowerSearchTerm)
-      );
-    }
-
-    // Filtrar por categorías
-    if (selectedCategories.length > 0) {
-      filtered = filtered.filter(product =>
-        selectedCategories.includes(product.category)
-      );
-    }
-
-    // Filtrar por fabricantes
-    if (selectedManufacturers.length > 0) {
-      filtered = filtered.filter(product =>
-        selectedManufacturers.includes(product.manufacturer)
-      );
-    }
-
-    // Filtrar por rango de precio
-    filtered = filtered.filter(product =>
-      product.price >= priceRange.min && product.price <= priceRange.max
-    );
-
-    // Ordenar
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'name-asc':
-          return a.name.localeCompare(b.name);
-        case 'name-desc':
-          return b.name.localeCompare(a.name);
-        case 'price-asc':
-          return a.price - b.price;
-        case 'price-desc':
-          return b.price - a.price;
-        case 'rating':
-          return b.rating - a.rating;
-        default:
-          return 0;
-      }
-    });
-
-    return filtered;
-  }, [products, searchTerm, selectedCategories, selectedManufacturers, priceRange, sortBy]);
-
-  // Obtener categorías únicas (useMemo para optimización)
-  const availableCategories = useMemo(() => {
-    return [...new Set(products.map(p => p.category))].sort();
-  }, [products]);
-
-  // Obtener fabricantes únicos (useMemo para optimización)
-  const availableManufacturers = useMemo(() => {
-    return [...new Set(products.map(p => p.manufacturer))].sort();
-  }, [products]);
-
-  // Obtener rango de precios
-  const priceRangeLimits = useMemo(() => {
-    const prices = products.map(p => p.price);
-    return {
-      min: Math.floor(Math.min(...prices)),
-      max: Math.ceil(Math.max(...prices))
-    };
-  }, [products]);
 
   return {
-    // Estado
+    // Datos
+    products: filteredProducts,
+    allProducts: products,
+    facets,
+    suggestions,
+    
+    // Estado de búsqueda
     searchTerm,
+    loading,
+    error,
+    
+    // Estado de filtros
     selectedCategories,
-    selectedManufacturers,
-    priceRange,
-    sortBy,
+    selectedPriceRange,
+    minRating,
     
-    // Setters
+    // Funciones de búsqueda
+    handleSearch,
+    handleAutocomplete,
     setSearchTerm,
-    setSelectedCategories,
-    setSelectedManufacturers,
-    setPriceRange,
-    setSortBy,
     
-    // Helpers
-    toggleCategory,
-    toggleManufacturer,
+    // Funciones de filtrado
+    applyFilters,
     clearFilters,
-    
-    // Resultados
-    filteredProducts,
-    availableCategories,
-    availableManufacturers,
-    priceRangeLimits,
+    toggleCategory,
+    setSelectedCategories,
+    setSelectedPriceRange,
+    setMinRating,
     
     // Estadísticas
     totalResults: filteredProducts.length,
-    hasActiveFilters: searchTerm || selectedCategories.length > 0 || 
-                      selectedManufacturers.length > 0 || 
-                      priceRange.min > 0 || priceRange.max < Infinity
+    hasActiveFilters: selectedCategories.length > 0 || 
+                      selectedPriceRange !== null || 
+                      minRating > 0 ||
+                      (searchTerm && searchTerm.trim() !== '')
   };
 }
 

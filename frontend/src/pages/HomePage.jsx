@@ -1,52 +1,37 @@
-import { useState, useEffect } from 'react';
-import SearchBar from '../components/common/SearchBar';
+import { useEffect } from 'react';
+import SearchAutocomplete from '../components/SearchAutocomplete';
 import ProductGrid from '../components/products/ProductGrid';
-import ProductFilters from '../components/products/ProductFilters';
-import mockProducts from '../data/mockProducts';
+import FacetsPanel from '../components/FacetsPanel';
 import useSearch from '../hooks/useSearch';
 import '../styles/pages/home.css';
 
 /**
- * HomePage - Página principal con catálogo de productos
- * Utiliza useSearch custom hook para filtrar productos
- * Utiliza useState para controlar el término de búsqueda usado en SearchBar
- * Utiliza useEffect para scroll to top al cargar
+ * HomePage - Página principal con búsqueda Elasticsearch
+ * Integra búsqueda full-text, autocompletado y facets dinámicos
  */
 function HomePage() {
     const {
+        products,
+        facets,
+        suggestions,
         searchTerm,
-        setSearchTerm,
+        loading,
+        error,
         selectedCategories,
-        selectedManufacturers,
-        setSortBy,
-        sortBy,
-        toggleCategory,
-        toggleManufacturer,
-        setPriceRange,
+        selectedPriceRange,
+        minRating,
+        handleSearch,
+        handleAutocomplete,
+        applyFilters,
         clearFilters,
-        filteredProducts,
-        availableCategories,
-        availableManufacturers,
-        priceRangeLimits,
-        totalResults
-    } = useSearch(mockProducts);
-
-    const [loading, setLoading] = useState(true);
-
-    // Simular carga inicial
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 500);
-        return () => clearTimeout(timer);
-    }, []);
+        totalResults,
+        hasActiveFilters
+    } = useSearch();
 
     // Scroll to top al cargar
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const handlePriceChange = (min, max) => {
-        setPriceRange({ min, max });
-    };
 
     return (
         <div className="container home-page">
@@ -59,10 +44,10 @@ function HomePage() {
                     Descubre miles de diseños únicos para impresión 3D. Desde miniaturas hasta arquitectura.
                 </p>
                 <div className="home-page__search">
-                    <SearchBar
-                        value={searchTerm}
-                        onChange={setSearchTerm}
-                        placeholder="Buscar modelos 3D..."
+                    <SearchAutocomplete
+                        onSearch={handleSearch}
+                        onAutocomplete={handleAutocomplete}
+                        suggestions={suggestions}
                     />
                 </div>
             </section>
@@ -73,29 +58,55 @@ function HomePage() {
                     <h2 className="home-page__results-title">
                         {searchTerm ? `Resultados para "${searchTerm}"` : 'Todos los Productos'}
                     </h2>
-                    <p className="home-page__results-count">
-                        {totalResults} {totalResults === 1 ? 'producto' : 'productos'}
-                    </p>
+                    <div className="home-page__results-info">
+                        <p className="home-page__results-count">
+                            {totalResults} {totalResults === 1 ? 'producto' : 'productos'}
+                        </p>
+                        {hasActiveFilters && (
+                            <button onClick={clearFilters} className="clear-filters-btn">
+                                ✕ Limpiar filtros
+                            </button>
+                        )}
+                    </div>
                 </div>
 
                 <div className="home-page__content">
-                    {/* Filtros */}
-                    <ProductFilters
-                        categories={availableCategories}
-                        manufacturers={availableManufacturers}
-                        priceRange={priceRangeLimits}
-                        selectedCategories={selectedCategories}
-                        selectedManufacturers={selectedManufacturers}
-                        onToggleCategory={toggleCategory}
-                        onToggleManufacturer={toggleManufacturer}
-                        onPriceChange={handlePriceChange}
-                        sortBy={sortBy}
-                        onSortChange={setSortBy}
-                        onClearFilters={clearFilters}
+                    {/* Panel de Facets */}
+                    <FacetsPanel
+                        facets={facets}
+                        onApplyFilters={applyFilters}
+                        currentFilters={{
+                            categorias: selectedCategories,
+                            ratingMin: minRating
+                        }}
                     />
 
                     {/* Grid de productos */}
-                    <ProductGrid products={filteredProducts} loading={loading} />
+                    <div className="home-page__products">
+                        {error && (
+                            <div className="error-message">
+                                <p>⚠️ {error}</p>
+                                <button onClick={() => window.location.reload()}>
+                                    Reintentar
+                                </button>
+                            </div>
+                        )}
+
+                        {!error && (
+                            <ProductGrid products={products} loading={loading} />
+                        )}
+
+                        {!loading && !error && products.length === 0 && (
+                            <div className="no-results">
+                                <p className="no-results__icon">🔍</p>
+                                <h3>No se encontraron productos</h3>
+                                <p>Intenta con otros términos de búsqueda o filtros</p>
+                                <button onClick={clearFilters} className="btn-primary">
+                                    Ver todos los productos
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </section>
         </div>
@@ -103,4 +114,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
