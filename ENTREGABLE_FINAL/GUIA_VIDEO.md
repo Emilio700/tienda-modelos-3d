@@ -14,7 +14,7 @@ Esta guía estructura el video para cubrir los 5 puntos requeridos, asignando pa
 | **1.** | Modificaciones Front-end (Hooks & State) | Integrante 1 | 3-4 min |
 | **2.** | Back-end: ElasticSearch (Query DSL & Aggregations) | Integrante 2 | 3-4 min |
 | **3.** | Despliegue Local (Docker Network & Volumes) | Integrante 3 | 3-4 min |
-| **4. y 5.** | Despliegue Remoto y Conclusiones | Integrante 4 | 3-4 min |
+| **4.** | Despliegue Remoto y Conclusiones | Integrante 4 | 3-4 min |
 
 ---
 
