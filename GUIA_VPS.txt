@@ -22,8 +22,8 @@ PASO 2: Preparar el VPS ☁️
    apt install docker.io docker-compose -y
 
 3. Clona tu repositorio:
-   git clone https://github.com/tu-usuario/tu-repo.git web-app
-   cd web-app/backend
+   git clone https://github.com/Emilio700/tienda-modelos-3d.git
+   cd tienda-modelos-3d/backend
 
 PASO 3: Configuración Vital ⚙️
 -----------------------------
